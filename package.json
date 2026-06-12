@@ -1,0 +1,21 @@
+{
+  "name": "cryptowallet",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace backend\" \"npm run dev --workspace frontend\"",
+    "build": "npm run build --workspace frontend",
+    "start": "npm run start --workspace backend",
+    "install:all": "npm install --workspaces",
+    "db:schema": "node backend/scripts/setup-db.js schema",
+    "db:seed": "node backend/scripts/setup-db.js seed",
+    "db:setup": "node backend/scripts/setup-db.js"
+  },
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
